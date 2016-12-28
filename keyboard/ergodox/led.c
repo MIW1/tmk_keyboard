@@ -22,36 +22,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "led.h"
 #include "ergodox.h"
 
-
+/* This method is called when Num lock, Caps lock or Scroll lock is activated.
+ * If you want leds to turn on or off when these modifiers are toggled this is
+ * the place to put that code.
+ */
 void led_set(uint8_t usb_led)
 {
     // topmost - NumLock
-#ifdef INVERT_NUMLOCK
     if (usb_led & (1<<USB_LED_NUM_LOCK)) {
-        ergodox_right_led_1_on();
+        ergodox_board_led_off();
     } else {
-        ergodox_right_led_1_off();
-    }
-#else
-    if (usb_led & (1<<USB_LED_NUM_LOCK)) {
-        ergodox_right_led_1_off();
-    } else {
-        ergodox_right_led_1_on();
-    }
-#endif
-
-    // middle - CapsLock
-    if (usb_led & (1<<USB_LED_CAPS_LOCK)) {
-        ergodox_right_led_2_on();
-    } else {
-        ergodox_right_led_2_off();
-    }
-
-    // bottommost - ScrollLock
-    if (usb_led & (1<<USB_LED_SCROLL_LOCK)) {
-        ergodox_right_led_3_on();
-    } else {
-        ergodox_right_led_3_off();
+        ergodox_board_led_on();
     }
 }
 
