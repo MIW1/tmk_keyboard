@@ -1,8 +1,11 @@
 MIW's Notes
 =====
-This branch contains my changes to the ergodox layout.
+This fork primarily contains my changes to the ergodox layout.
+It may be interesting for Scandinavian users since I've made defines for the glyphs that differ from english layout.
+
+Teensy loader under build section is highly recommended, shaves off requirements and steps for the build process.
+
 Can't promise to keep up with the tmk_keyboard repo nor the cub-uanic repo. Simply because I may not need the updates.
-This branch may be interesting for Scandinavian users since I've made defines for the glyphs that differ from english layout.
 
 TMK Keyboard Firmware Collection
 ================================
